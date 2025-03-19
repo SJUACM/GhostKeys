@@ -11,6 +11,8 @@ For the two machines, it can be any combination of VMs or physical machines you 
 Commands Used: In order (All commands are on your linux machine)
 - Install VS Code
 	- `sudo apt install code-oss`
+- Install the MinGW toolchain
+	- `sudo apt install mingw-w64`
 - Clone the github repo
 	- `cd /opt`
 	- `sudo git clone https://github.com/SJUACM/GhostKeys.git`
@@ -20,6 +22,9 @@ Commands Used: In order (All commands are on your linux machine)
 		- Replace "`<new-branch-name>`" with whatever you want to name your branch
 - Open the repo in VS Code
 	- `sudo code-oss .`
+- Compile the code
+	- `sudo x86_64-w64-mingw32-gcc GhostKeys.c -o GhostKeys.exe -mwindows`
+	- Make sure that you do not try to submit a compiled EXE in your pull request. 
 - Commit Changes
 	- `git add <changed files>`
 		- Replace `<changed files>` with the names of any files you made changes to
